@@ -22,56 +22,91 @@
         .w3-bar-block .w3-bar-item {
             padding: 20px
         }
-        a.ex2:hover, a.ex2:active {font-size: 150%;}
+
+        /* Style tab links */
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 20%;
+        }
+
+        .tablink:hover {
+            background-color: #777;
+        }
+
+        /* Style the tab content (and add height:100% for full page content) */
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 100px 20px;
+            height: 100%;
+        }
+
+        #event1 {
+            background-color: navy;
+        }
+
+        #event2 {
+            background-color: lightblue;
+        }
+
+        #event3 {
+            background-color: skyblue;
+        }
+
+        #event4 {
+            background-color: coral;
+        }
+
+        #event5 {
+            background-color: lightcyan;
+        }
     </style>
 </head>
 
 <body>
-
-    <!-- Sidebar (hidden by default) -->
-    <!--<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"
-        style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
-        <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button">Close Menu</a>
-        <a href="#food" onclick="w3_close()" class="w3-bar-item w3-button">Food</a>
-        <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">About</a>
-    </nav> -->
-
     <!-- Top menu -->
-    <!-- Navbar -->
-    <div class="w3-top">
-        <div class="w3-bar w3-red w3-card w3-left-align w3-large">
-            <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-red"
-                href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i
-                    class="fa fa-bars"></i></a>
-            <a href="https://beliabaez.github.io/ADB/" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
-        </div>
-    </div>
+
     <!-- Header -->
     <header class="w3-container w3-red w3-center" style="padding:30px 15px">
         <h1 class="w3-margin w3-jumbo">Literatura</h1>
-        <p class="w3-xlarge">By Alejandra Dominguez</p>
-        
+        <p class="w3-xlarge">By Alejandra Domínguez</p>
+
     </header>
+    <button class="tablink" onclick="openPage('event1', this, '#ea4c46')" id="defaultOpen">Un poco sobre mi</button>
+    <button class="tablink" onclick="openPage('event2', this, '#ea4c46')">La literatura en mi vida</button>
+    <button class="tablink" onclick="openPage('event3', this, '#ea4c46')">Actividades de clase</button>
+    <button class="tablink" onclick="openPage('event4', this, '#ea4c46')">Actividades para jardin</button>
+    <button class="tablink" onclick="openPage('event5', this, '#ea4c46')">Actividades extraclase</button>
 
-    <!-- !PAGE CONTENT! -->
-    <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
-
+    <div id="event1" class="tabcontent">
+        <h3>aqui hablaremos un poco sobre mi</h3>
+        <p></p>
         <!-- First Photo Grid-->
         <div class="w3-row-padding w3-padding-16 w3-center" id="food">
             <div class="w3-quarter">
-                <img src="https://storage.googleapis.com/du-prd/books/images/9781668002179.jpg" alt="Sandwich" style="width:100%">
+                <img src="https://storage.googleapis.com/du-prd/books/images/9781668002179.jpg" alt="Sandwich"
+                    style="width:100%">
                 <h3>Titutlo 1</h3>
                 <p>Pequeña reseña.</p>
                 <a class="ex2" href="https://www.nytimes.com/books/best-sellers/" target="_blank"> Conocer más</a>
             </div>
             <div class="w3-quarter">
-                <img src="https://storage.googleapis.com/du-prd/books/images/9781791392796.jpg" alt="Steak" style="width:100%">
+                <img src="https://storage.googleapis.com/du-prd/books/images/9781791392796.jpg" alt="Steak"
+                    style="width:100%">
                 <h3>Titutlo 2</h3>
                 <p>Pequeña reseña.</p>
                 <a class="ex2" href="https://www.nytimes.com/books/best-sellers/" target="_blank"> Conocer más</a>
             </div>
             <div class="w3-quarter">
-                <img src="https://storage.googleapis.com/du-prd/books/images/9780593496473.jpg" alt="Cherries" style="width:100%">
+                <img src="https://storage.googleapis.com/du-prd/books/images/9780593496473.jpg" alt="Cherries"
+                    style="width:100%">
                 <h3>Titutlo 3</h3>
                 <p>Pequeña reseña.</p>
                 <a class="ex2" href="https://www.nytimes.com/books/best-sellers/" target="_blank"> Conocer más</a>
@@ -84,7 +119,16 @@
                 <a class="ex2" href="https://www.nytimes.com/books/best-sellers/" target="_blank"> Conocer más</a>
             </div>
         </div>
+    </div>
 
+    <div id="event2" class="tabcontent">
+        <h3>la literatura en mi vida</h3>
+        <p>aqui se habla de la lectura en tu vida</p>
+    </div>
+
+    <div id="event3" class="tabcontent">
+        <h3>actividades en clase</h3>
+        <p>por lo que se habla de actividades en clase.</p>
         <!-- Second Photo Grid-->
         <div class="w3-row-padding w3-padding-16 w3-center">
             <div class="w3-quarter">
@@ -113,95 +157,45 @@
             </div>
         </div>
 
-        <!-- Pagination -->
-        <!--<div class="w3-center w3-padding-32">
-            <div class="w3-bar">
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">«</a>
-                <a href="#" class="w3-bar-item w3-black w3-button">1</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">2</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">3</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">4</a>
-                <a href="#" class="w3-bar-item w3-button w3-hover-black">»</a>
-            </div>
-        </div> -->
+    </div>
 
-        <hr id="about">
+    <div id="event4" class="tabcontent">
+        <h3>las actividades del garden</h3>
+        <p>Tpues supongo que actividades que pasan allá.</p>
+    </div>
 
-        <!-- About Section -->
-        <!--<div class="w3-container w3-padding-32 w3-center">
-            <h3>About Me, The Food Man</h3><br>
-            <img src="/w3images/chef.jpg" alt="Me" class="w3-image" style="display:block;margin:auto" width="800"
-                height="533">
-            <div class="w3-padding-32">
-                <h4><b>I am Who I Am!</b></h4>
-                <h6><i>With Passion For Real, Good Food</i></h6>
-                <p>Just me, myself and I, exploring the universe of unknownment. I have a heart of love and an interest
-                    of lorem ipsum and mauris neque quam blog. I want to share my world with you. Praesent tincidunt sed
-                    tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non
-                    fringilla. Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae,
-                    ultricies congue gravida diam non fringilla.</p>
-            </div>
-        </div> -->
-        <hr> 
+    <div id="event5" class="tabcontent">
+        <h3>extra clase?</h3>
+        <p>tipo paraescolares?</p>
+    </div>
 
-        <!-- Footer -->
-        <!-- <footer class="w3-row-padding w3-padding-32">
-            <div class="w3-third">
-                <h3>FOOTER</h3>
-                <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies
-                    congue gravida diam non fringilla.</p>
-                <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-            </div>
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
 
-            <div class="w3-third">
-                <h3>BLOG POSTS</h3>
-                <ul class="w3-ul w3-hoverable">
-                    <li class="w3-padding-16">
-                        <img src="/w3images/workshop.jpg" class="w3-left w3-margin-right" style="width:50px">
-                        <span class="w3-large">Lorem</span><br>
-                        <span>Sed mattis nunc</span>
-                    </li>
-                    <li class="w3-padding-16">
-                        <img src="/w3images/gondol.jpg" class="w3-left w3-margin-right" style="width:50px">
-                        <span class="w3-large">Ipsum</span><br>
-                        <span>Praes tinci sed</span>
-                    </li>
-                </ul>
-            </div>
 
-            <div class="w3-third w3-serif">
-                <h3>POPULAR TAGS</h3>
-                <p>
-                    <span class="w3-tag w3-black w3-margin-bottom">Travel</span> <span
-                        class="w3-tag w3-dark-grey w3-small w3-margin-bottom">New York</span> <span
-                        class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dinner</span>
-                    <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Salmon</span> <span
-                        class="w3-tag w3-dark-grey w3-small w3-margin-bottom">France</span> <span
-                        class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Drinks</span>
-                    <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Ideas</span> <span
-                        class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Flavors</span> <span
-                        class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Cuisine</span>
-                    <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Chicken</span> <span
-                        class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Dressing</span> <span
-                        class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fried</span>
-                    <span class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Fish</span> <span
-                        class="w3-tag w3-dark-grey w3-small w3-margin-bottom">Duck</span>
-                </p>
-            </div>
-        </footer> -->
+
+
 
         <!-- End page content -->
     </div>
 
     <script>
-        // Script to open and close sidebar
-        function w3_open() {
-            document.getElementById("mySidebar").style.display = "block";
+        function openPage(pageName, elmnt, color) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].style.backgroundColor = "";
+            }
+            document.getElementById(pageName).style.display = "block";
+            elmnt.style.backgroundColor = color;
         }
 
-        function w3_close() {
-            document.getElementById("mySidebar").style.display = "none";
-        }
+        // Get the element with id="defaultOpen" and click on it
+        document.getElementById("defaultOpen").click();
     </script>
 
 </body>
