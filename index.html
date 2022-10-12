@@ -290,33 +290,94 @@
     <div id="event3" class="tabcontent">
         <h3>actividades en clase</h3>
         <p>por lo que se habla de actividades en clase.</p>
-        <!-- Second Photo Grid-->
-        <div class="w3-row-padding w3-padding-16 w3-center">
-            <div class="w3-quarter">
-                <img src="/w3images/popsicle.jpg" alt="Popsicle" style="width:100%">
-                <h3>Titutlo 5</h3>
-                <p>Pequeña reseña.</p>
-                <a class="ex2" href="https://www.nytimes.com/books/best-sellers/" target="_blank"> Conocer más</a>
-            </div>
-            <div class="w3-quarter">
-                <img src="/w3images/salmon.jpg" alt="Salmon" style="width:100%">
-                <h3>Titutlo 6</h3>
-                <p>Pequeña reseña.</p>
-                <a class="ex2" href="https://www.nytimes.com/books/best-sellers/" target="_blank"> Conocer más</a>
-            </div>
-            <div class="w3-quarter">
-                <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-                <h3>Titutlo 7</h3>
-                <p>Pequeña reseña.</p>
-                <a class="ex2" href="https://www.nytimes.com/books/best-sellers/" target="_blank"> Conocer más</a>
-            </div>
-            <div class="w3-quarter">
-                <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
-                <h3>Titutlo 8</h3>
-                <p>Pequeña reseña.</p>
-                <a class="ex2" href="https://www.nytimes.com/books/best-sellers/" target="_blank"> Conocer más</a>
-            </div>
+        <p>Slideshow 1:</p>
+        <div class="slideshow-container">
+        <div class="mySlides1">
+            <img src="LitInfantil/1.png" style="width:100%">
         </div>
+
+        <div class="mySlides1">
+            <img src="LitInfantil/2.png style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="LitInfantil/3.png" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="LitInfantil/4.png" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="LitInfantil/5.png" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="LitInfantil/6.png" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="LitInfantil/7.png" style="width:100%">
+        </div>
+
+        <div class="mySlides1">
+            <img src="LitInfantil/8.png" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
+        </div>
+
+        <p>Slideshow 2:</p>
+        <div class="slideshow-container">
+        <div class="mySlides2">
+            <img src="FelicesPerdices/1.png" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="FelicesPerdices/2.png" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="FelicesPerdices/3.png" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="FelicesPerdices/4.png" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="FelicesPerdices/5.png" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="FelicesPerdices/6.png" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="FelicesPerdices/7.png" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="FelicesPerdices/8.png" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="FelicesPerdices/9.png" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="FelicesPerdices/10.png" style="width:100%">
+        </div>
+
+        <div class="mySlides2">
+            <img src="FelicesPerdices/11.png" style="width:100%">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+        </div>
+        
 
     </div>
 
@@ -388,6 +449,28 @@
         slides[slideIndex-1].style.display = "block";  
         dots[slideIndex-1].className += " active";
         }
+
+        let slideIndex = [1,1];
+        let slideId = ["mySlides1", "mySlides2"]
+        showSlides(1, 0);
+        showSlides(1, 1);
+
+        function plusSlides(n, no) {
+        showSlides(slideIndex[no] += n, no);
+        }
+
+        function showSlides(n, no) {
+        let i;
+        let x = document.getElementsByClassName(slideId[no]);
+        if (n > x.length) {slideIndex[no] = 1}    
+        if (n < 1) {slideIndex[no] = x.length}
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        x[slideIndex[no]-1].style.display = "block";  
+        }
+
+
     </script>
 
 </body>
